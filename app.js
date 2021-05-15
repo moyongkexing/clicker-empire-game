@@ -323,7 +323,7 @@ function generateMainPage(Player, bgColor) {
 
       const image = document.createElement('img');
       image.src = Item.src;
-      image.classList.add('w-4/5');
+      image.classList.add('w-36', 'h-32');
 
       const subBx = document.createElement('div');
       subBx.classList.add('w-3/5', 'flex', 'flex-col', 'items-start');
