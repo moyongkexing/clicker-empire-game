@@ -1,8 +1,9 @@
 # Click Empire Game
 ## URL
+https://github.com/moyongkexing/clicker-empire-game
 
 ## Demo
-<!-- ![demo](https://user-images.githubusercontent.com/77483402/117644473-78017580-b1c4-11eb-97a3-885b3dbccc82.gif) -->
+![gif1](https://user-images.githubusercontent.com/77483402/118357951-8b8f5080-b5b7-11eb-9458-951be751b572.gif)
 
 ## Description
 コンピュータサイエンス学習プラットフォーム、Recursion CSの課題作品です。  
@@ -20,8 +21,8 @@
   
 ## Installation
 ```
-<!-- $ git clone https://github.com/moyongkexing/vending-machine.git
-$ cd vending-machine -->
+$ git clone https://github.com/moyongkexing/clicker-empire-game.git
+$ cd clicker-empire-game
 ```
 
 ## Author
