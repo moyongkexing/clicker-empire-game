@@ -27,7 +27,7 @@ class Item {
   }
 
   calculateProfit(quantity) {
-    // 「株式」を購入する場合、上昇する価格に応じて。累計購入額を更新する必要がある
+    // 「株式」を購入する場合、価格の増加分を考慮して、累計購入額を更新する必要がある
     if (this.name === '株式') {
       const profit = Math.floor((this.getTotalPrice(quantity) + this.cumulativePurchaseAmountStock) * this.interests);
       this.cumulativePurchaseAmountStock += this.getTotalPrice(quantity);
@@ -122,7 +122,7 @@ function render(page) {
   app.append(page);
 }
 
-// 受け取ったidをもつノードの内部のHTMLを受け取ったvalueで更新する関数
+// 受け取ったidをもつノードの内部HTMLを、受け取ったvalueで更新する関数
 function redraw(id, value) {
   document.getElementById(id).innerHTML = value;
 }
