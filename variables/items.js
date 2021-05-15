@@ -36,7 +36,7 @@ const ITEMS = [
     interests: 0.01,
     price: 100000,
     maxNumPossession: 100,
-    description: '累計購入金額の 1% 円を毎秒取得します。',
+    description: '累計購入額の 1% 円を毎秒取得します。',
     src: 'stock.jpg',
   },
   {
@@ -46,7 +46,7 @@ const ITEMS = [
     interests: 0.02,
     price: 200000,
     maxNumPossession: 100,
-    description: '累計購入金額の 2% 円を毎秒取得しますが、購入する度に10%購入額が増加します。',
+    description: '累計購入額の 2% 円を毎秒取得しますが、購入する度に10%購入額が増加します。',
     src: 'stock.jpg',
   },
   {

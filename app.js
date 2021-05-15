@@ -27,13 +27,14 @@ class Item {
   }
 
   calculateProfit(quantity) {
+    // 「株式」を購入する場合、上昇する価格に応じて。累計購入額を更新する必要がある
     if (this.name === '株式') {
       const profit = Math.floor((this.getTotalPrice(quantity) + this.cumulativePurchaseAmountStock) * this.interests);
       this.cumulativePurchaseAmountStock += this.getTotalPrice(quantity);
       this.increaseStockPrice();
-      console.log(this.cumulativePurchaseAmountStock);
       return profit;
     }
+    // 「債券」を購入する場合は、価格が変化しないため、累計購入額は価格と累計購入数の積で単純に求められる
     return Math.floor((this.getTotalPrice(quantity) + this.numOwned * this.price) * this.interests);
   }
 
@@ -87,11 +88,12 @@ class Player {
   }
 
   purchase(Item, quantity) {
-    // console.log(Item.cumulativePurchaseAmountStock);
-    // console.log(Item.numOwned);
     const moneyRequired = Item.price * quantity;
+    //  所持金が不足している場合
     if (this.totalMoney < moneyRequired) alert('所持金が不足しています。');
+    // 所持上限数に達している場合
     else if (Item.isReachMaxNumPossession(quantity)) alert('所持上限数に達しています。');
+    // 購入できる場合
     else {
       switch (Item.type) {
         case '能力': this.incomePerClick += Item.calculateIncome(quantity); break;
@@ -100,15 +102,16 @@ class Player {
         default:
           break;
       }
-      this.pay(moneyRequired);
-      Item.bePurchased(quantity);
+      this.pay(moneyRequired); // 所持金を減少させる
+      Item.bePurchased(quantity); // アイテムインスタンスの被所持数の値を増加させる
       redraw('incomePerClickTxt', `1個あたり ${this.incomePerClick.toLocaleString()} 円獲得`);
       redraw('incomePerSecondTxt', `1秒あたり ${this.incomePerSecond.toLocaleString()} 円獲得`);
     }
   }
 }
 
-// <------------ここから------------>
+
+// <----------------ここから---------------->
 const startPage = generateStartPage('gray');
 render(startPage);
 
@@ -372,4 +375,3 @@ function generateMainPage(Player, bgColor) {
     }
   }
 }
-// <------------HTML生成関数終わり------------>
