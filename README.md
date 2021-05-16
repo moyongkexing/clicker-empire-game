@@ -1,6 +1,6 @@
 # Click Empire Game
 ## URL
-https://github.com/moyongkexing/clicker-empire-game
+clicker-empire-game.vercel.app
 
 ## Demo
 ![gif1](https://user-images.githubusercontent.com/77483402/118357951-8b8f5080-b5b7-11eb-9458-951be751b572.gif)
